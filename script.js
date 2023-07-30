@@ -1,19 +1,17 @@
 // Write your JavaScript code here!
 
-const { validateInput, formSubmission } = require("./scriptHelper");
-
 window.addEventListener("load", function () {
   let form = document.querySelector("form");
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     let pilotNameInput = document.querySelector("input[name=pilotName]");
     let copilotNameInput = document.querySelector("input[name=copilotName]");
-    let fuleLevelInput = document.querySelector("input[name=fuelLevel]");
+    let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
     let cargoMassInput = document.querySelector("input[name=cargoMass");
     if (
       pilotNameInput.value === "" ||
       copilotNameInput.value === "" ||
-      fuleLevelInput.value === "" ||
+      fuelLevelInput.value === "" ||
       cargoMassInput.value === ""
     ) {
       alert("All fields are required");
@@ -21,17 +19,20 @@ window.addEventListener("load", function () {
     } else if (
       validateInput(pilotNameInput.value) === "Is a Number" ||
       validateInput(copilotNameInput.value) === "Is a Number" ||
-      validateInput(fuleLevelInput.value) === "Not a Number" ||
+      validateInput(fuelLevelInput.value) === "Not a Number" ||
       validateInput(cargoMassInput.value) === "Not a Number"
     ) {
+      console.log(pilotNameInput.value);
+      console.log(copilotNameInput.value);
+      console.log(fuelLevelInput.value);
+      console.log(cargoMassInput.value);
       alert("Invalid input!");
       event.preventDefault();
     } else {
       formSubmission(
-        document,
         pilotNameInput,
         copilotNameInput,
-        fuleLevelInput,
+        fuelLevelInput,
         cargoMassInput
       );
       event.preventDefault();
