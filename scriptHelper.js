@@ -34,7 +34,7 @@ function validateInput(testInput) {
   }
 }
 
-function formSubmission(pilot, copilot, fuelLevel, cargoLevel) {
+function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
   let launchStatus = document.querySelector("#launchStatus");
   let faultyItems = document.querySelector("#faultyItems");
   let pilotStatus = document.querySelector("#pilotStatus");

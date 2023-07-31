@@ -28,7 +28,7 @@ window.addEventListener("load", function () {
       alert("Make sure to enter valid information for each field!");
       event.preventDefault();
     } else {
-      formSubmission(
+      formSubmission(document,
         pilotNameInput,
         copilotNameInput,
         fuelLevelInput,
