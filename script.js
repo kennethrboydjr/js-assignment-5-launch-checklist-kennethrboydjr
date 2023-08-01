@@ -7,6 +7,7 @@ window.addEventListener("load", function () {
     let copilotNameInput = document.querySelector("input[name=copilotName]");
     let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
     let cargoMassInput = document.querySelector("input[name=cargoMass");
+    let list = document.querySelector("#faultyItems");
     if (
       pilotNameInput.value === "" ||
       copilotNameInput.value === "" ||
@@ -21,14 +22,12 @@ window.addEventListener("load", function () {
       validateInput(fuelLevelInput.value) === "Not a Number" ||
       validateInput(cargoMassInput.value) === "Not a Number"
     ) {
-      console.log(pilotNameInput.value);
-      console.log(copilotNameInput.value);
-      console.log(fuelLevelInput.value);
-      console.log(cargoMassInput.value);
       alert("Make sure to enter valid information for each field!");
       event.preventDefault();
     } else {
-      formSubmission(document,
+      formSubmission(
+        document,
+        list,
         pilotNameInput,
         copilotNameInput,
         fuelLevelInput,
