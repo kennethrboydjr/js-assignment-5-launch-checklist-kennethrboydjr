@@ -8,39 +8,21 @@ window.addEventListener("load", function () {
     let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
     let cargoMassInput = document.querySelector("input[name=cargoMass");
     let list = document.querySelector("#faultyItems");
-    if (
-      pilotNameInput.value === "" ||
-      copilotNameInput.value === "" ||
-      fuelLevelInput.value === "" ||
-      cargoMassInput.value === ""
-    ) {
+    if (pilotNameInput.value === "" || copilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
       alert("All fields are required");
       event.preventDefault();
-    } else if (
-      validateInput(pilotNameInput.value) === "Is a Number" ||
-      validateInput(copilotNameInput.value) === "Is a Number" ||
-      validateInput(fuelLevelInput.value) === "Not a Number" ||
-      validateInput(cargoMassInput.value) === "Not a Number"
-    ) {
+    } else if (validateInput(pilotNameInput.value) === "Is a Number" || validateInput(copilotNameInput.value) === "Is a Number" || validateInput(fuelLevelInput.value) === "Not a Number" || validateInput(cargoMassInput.value) === "Not a Number") {
       alert("Make sure to enter valid information for each field!");
       event.preventDefault();
     } else {
-      formSubmission(
-        document,
-        list,
-        pilotNameInput,
-        copilotNameInput,
-        fuelLevelInput,
-        cargoMassInput
-      );
+      formSubmission(document, list, pilotNameInput, copilotNameInput, fuelLevelInput, cargoMassInput);
       event.preventDefault();
     }
   });
   let listedPlanets;
   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
   let listedPlanetsResponse = myFetch();
-  listedPlanetsResponse
-    .then(function (result) {
+  listedPlanetsResponse.then(function (result) {
       listedPlanets = result;
       console.log(listedPlanets);
     })
@@ -53,14 +35,6 @@ window.addEventListener("load", function () {
       let distance = planet.distance;
       let imageUrl = planet.image;
       let moons = planet.moons;
-      addDestinationInfo(
-        document,
-        name,
-        diameter,
-        star,
-        distance,
-        moons,
-        imageUrl
-      );
+      addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl);
     });
 });
